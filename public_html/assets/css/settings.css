@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+/**************************************************************
+* フォント初期化
+**************************************************************/
+
+/* @font-face {} */
+
+/**************************************************************
+* カスタムプロパティ
+**************************************************************/
+
+:root {
+  --base-color: #333333;
+  --accent-color: #8e3330;
+  --extra-color: #eae3dc;
+  --warning-color: rgb(231, 65, 65);
+  --base-inverted-color: #ffffff;
+  --base-background-color: #ffffff;
+  --primary-background-color: #fcf3da;
+  --secondary-background-color: #ebeff0;
+  --ternary-background-color: #D9305C;
+  --form-control-bg: #ebefef;
+  --alphabetic-font-family: "Futura Bk BT", "Jost", sans-serif;
+  --base-font-size: 62.5%;
+  --base-bg: var(--base-background-color);
+  --header-height: 5;
+}
+
+@media all and (min-width: 1024px) {
+  :root {
+    --header-height: 10;
+  }
+}
+
+
+/***************************************
+* SPLIDE (Carousel) CORE STYLES
+***************************************/
+@keyframes splide-loading{0%{transform:rotate(0)}to{transform:rotate(1turn)}}.splide__track--draggable{-webkit-touch-callout:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.splide__track--fade>.splide__list>.splide__slide{margin:0!important;opacity:0;z-index:0}.splide__track--fade>.splide__list>.splide__slide.is-active{opacity:1;z-index:1}.splide--rtl{direction:rtl}.splide__track--ttb>.splide__list{display:block}.splide__container{box-sizing:border-box;position:relative}.splide__list{backface-visibility:hidden;display:-ms-flexbox;display:flex;height:100%;margin:0!important;padding:0!important}.splide.is-initialized:not(.is-active) .splide__list{display:block}.splide__pagination{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;margin:0;pointer-events:none}.splide__pagination li{display:inline-block;line-height:1;list-style-type:none;margin:0;pointer-events:auto}.splide:not(.is-overflow) .splide__pagination{display:none}.splide__progress__bar{width:0}.splide{position:relative;visibility:hidden}.splide.is-initialized,.splide.is-rendered{visibility:visible}.splide__slide{backface-visibility:hidden;box-sizing:border-box;-ms-flex-negative:0;flex-shrink:0;list-style-type:none!important;margin:0;position:relative}.splide__slide img{vertical-align:bottom}.splide__spinner{animation:splide-loading 1s linear infinite;border:2px solid #999999;border-left-color:transparent;border-radius:50%;bottom:0;contain:strict;display:inline-block;height:20px;left:0;margin:auto;position:absolute;right:0;top:0;width:20px}.splide__sr{clip:rect(0 0 0 0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.splide__toggle.is-active .splide__toggle__play,.splide__toggle__pause{display:none}.splide__toggle.is-active .splide__toggle__pause{display:inline}.splide__track{overflow:hidden;position:relative;z-index:0}
+
+.splide__pagination{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;margin:0;pointer-events:none}.splide__pagination li{display:inline-block;line-height:1;list-style-type:none;margin:0;pointer-events:auto}.splide:not(.is-overflow) .splide__pagination{display:none}
+.splide__pagination{bottom:1.5em;padding:0 1em;position:absolute;right:0;z-index:1}.splide__pagination__page{background:#ffffff;border:0;border-radius:50%;display:inline-block;height:8px;margin:3px;opacity:.7;padding:0;position:relative;transition:transform .2s linear;width:8px}.splide__pagination__page.is-active{background:#ffffff;transform:scale(1.4);z-index:1}.splide__pagination__page:hover{cursor:pointer;opacity:.9}.splide__pagination__page:focus-visible{outline:3px solid #999999;outline-offset:3px}.splide.is-focus-in .splide__pagination__page:focus{outline:3px solid #999999;outline-offset:3px}
+
+
+/**************************************************************
+* フォームリセット
+**************************************************************/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid transparent;
+  -webkit-text-fill-color: #000000;
+  -webkit-box-shadow: 0 0 0px 1000px var(--form-control-bg) inset;
+  box-shadow: 0 0 0px 1000px var(--form-control-bg) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:read-only,
+textarea:-webkit-autofill:read-only,
+select:-webkit-autofill:read-only,
+input[type="text"]:not(#acceptance):read-only,
+input[type="tel"]:not(#acceptance):read-only,
+input[type="email"]:not(#acceptance):read-only,
+textarea:not(.privacy-textarea):read-only {
+  border-color: var(--primary-background-color);
+  -webkit-text-fill-color: #000000;
+  -webkit-box-shadow: 0 0 0px 1000px var(--primary-background-color) inset;
+  box-shadow: 0 0 0px 1000px var(--primary-background-color) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* //MEMO
+    特定の入力フォームのデザインを変更する場合は、以下のCSSを使用してフォームの入力部分をカスタマイズします。
+.c-form-control__input,
+.c-form-control__textarea {
+  color: #000000 !important;
+  background: var(--form-control-bg) !important;
+}
+*/
+
+
+
+/**************************************************************
+* 背景画像の指定
+**************************************************************/
+
+/** 共通
+************************************************************ */
+.free-btn-icn {
+  background-image: url("../images/common/tel_icn.svg");
+}
+/* sns icons */
+i.line-icn      { background-image: url(../images/common/sns_line_icn.svg); }
+i.twitter-icn   { background-image: url(../images/common/sns_twitter_icn.svg); }
+i.instagram-icn { background-image: url(../images/common/sns_instagram_icn.svg); }
+i.youtube-icn { background-image: url(../images/common/sns_youtube_icn.svg); }
+i.facebook-icn { background-image: url(../images/common/sns_facebook_icn.svg); }
+
+/** MV
+************************************************************ */
+.mv-bg {
+  background-image: url(../images/main-visual/bg_sp.jpg);
+}
+@media all and (min-width: 1024px) {
+  .mv-bg {
+    background-image: url(../images/main-visual/bg.jpg);
+  }
+}
+
+/** CONCEPT
+************************************************************ */
+.moya-shape-wrapper::after {
+  background-image: url(../images/concept/worries_illust_bg.svg);
+}
+
+/** SERVICE
+************************************************************ */
+.bg-service .jarallax-img {
+  background-image: url(../images/service/upper_visual_bg.jpg);
+}
+
+.service-point:nth-child(1)::after {
+  background-image: url(../images/service/service01.png);
+}
+.service-point:nth-child(2)::after {
+  background-image: url(../images/service/service02.png);
+}
+.service-point:nth-child(3)::after {
+  background-image: url(../images/service/service_contents_item_3_bg.jpg);
+}
+
+.service-point:nth-child(4)::after {
+  background-image: url(../images/service/service_contents_item_3_bg.jpg);
+}
+
+/** FLOW
+************************************************************ */
+.flow::after {
+  background-image: url(../images/flow/flow_illust_bottom_bg.svg);
+}
+
+.faq__body::after {
+  background-image: url(../images/faq/faq_illust_bg.svg);
+}
+
+/** COMPANY
+************************************************************ */
+.company > div::before {
+  background-image: url(../images/company/company_visual_bg.jpg);
+}
